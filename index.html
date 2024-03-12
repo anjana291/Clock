@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./images/clock.jpg">
+</head>
+<body>
+    <div>
+        <h1 id="clock">11:22:02 pm</h1>
+    </div>
+</body>
+<script>
+    function getTime(){
+        const time = new Date();  //Date : a class
+        console.log(time);
+        let hour = time.getHours();
+        console.log(hour);
+        let minute = time.getMinutes();
+        console.log(minute);
+        let sec = time.getSeconds();
+        console.log(sec);
+
+        clock.innerHTML = `${hour} : ${minute} : ${sec}
+        ${hour>=12?'PM':'AM'}`
+
+        setTimeout(()=>{
+            getTime()
+        },1000)
+    }
+    getTime();
+</script>
+</html>
